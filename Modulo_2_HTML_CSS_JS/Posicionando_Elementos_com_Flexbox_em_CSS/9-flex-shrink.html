@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - flex shrink</title>
+
+    <style>
+        .flex-container {
+            display: flex;
+            max-width: 350px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+            ;
+        }
+
+        .items {
+            background-color: steelblue;
+            text-align: center;
+            margin: 5px;
+            font-size: 24px;
+        }
+
+        .s-1 {
+            flex-shrink: 1;
+        }
+
+        .fg-1 {
+            flex-grow: 1;
+        }
+
+        .fg-0 {
+            flex-shrink: 0;
+            flex-basis: 200px;
+        }
+
+
+        .s-0 {
+            flex-shrink: 0;
+            flex-basis: 100px;
+        }
+
+        .s-2 {
+            flex-shrink: 2;
+            flex-basis: 100px;
+        }
+
+        .s-3 {
+            flex-shrink: 3;
+            flex-basis: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Shrink 1</p>
+    <div class="flex-container">
+        <div class="items s-1 fg-1">A</div>
+        <div class="items s-1 fg-1">B</div>
+        <div class="items s-1 fg-1">C</div>
+        <div class="items s-1 fg-1">D</div>
+        <div class="items s-1 fg-1">E</div>
+    </div>
+
+    <div class="flex-container">
+        <div class="items s-1 fg-1">A</div>
+        <div class="items s-1 fg-1">Textos aleatorios para </div>
+        <div class="items s-1 fg-1">C</div>
+        <div class="items s-1 fg-1">D</div>
+        <div class="items s-1 fg-1">E</div>
+    </div>
+
+    <p>Flex-shrink - 0 basis: 100px</p>
+    <div class="flex-container">
+        <div class="items s-0 fg-1">A</div>
+        <div class="items s-0 fg-1">Textos aleatorios para </div>
+        <div class="items s-0 fg-1">C Testes</div>
+        <div class="items s-0 fg-1">D</div>
+        <div class="items s-0 fg-1">E</div>
+    </div>
+
+    <p>Flex-shrink mix - 0 basis: 100px</p>
+    <div class="flex-container">
+        <div class="items s-1 fg-1">A</div>
+        <div class="items s-1 fg-1">Textos aleatorios para </div>
+        <div class="items s-2 fg-1">C Testes</div>
+        <div class="items s-2 fg-1">D</div>
+        <div class="items s-3 fg-1">E</div>
+    </div>
+</body>
+
+</html>
